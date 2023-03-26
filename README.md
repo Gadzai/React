@@ -15,7 +15,7 @@ React Notes and Journey of React
 |`renders`|**renders**|
 
 <br/><br/>
-
+ 
 > This is a notes, click here to go below more details [^details] <br/>
 
 <br/><br/>
