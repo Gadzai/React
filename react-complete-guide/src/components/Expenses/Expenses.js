@@ -7,10 +7,14 @@ import Card from "../UI/Card";
 const Expenses = (props) => {
   const initialList = props.list;
   const [expenses, filterExpenses] = useState(initialList);
+  const [filteredYear, setFilterYear] = useState('2020');
+  
 
   const expenseFilterHandler = (filteredYear) => {
     console.log(initialList);
     if (!isNaN(filteredYear)) {
+      setFilterYear(filteredYear);
+
       filterExpenses(() => {
         return initialList.filter((expense) => expense.date.getFullYear() == filteredYear);
       });
@@ -23,8 +27,8 @@ const Expenses = (props) => {
 
   return (
     <div>
-      <ExpensesFilter onFilter={expenseFilterHandler}></ExpensesFilter>
       <Card className="expenses">
+      <ExpensesFilter selected={filteredYear} onFilter={expenseFilterHandler}></ExpensesFilter>
         {expenses.map((expense) => {
           return (
             <ExpenseItem
