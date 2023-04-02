@@ -16,11 +16,12 @@ const App = () => {
     updateExpenses((prevState) => {
       return [addedExpenses, ...prevState];
     });
+    
   };
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses list={expenses} />
+      <Expenses items={expenses} />
     </div>
   );
 };
